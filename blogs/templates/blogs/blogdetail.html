@@ -1,0 +1,14 @@
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+<a href = "{%url 'blog-home' %}">Back to all Blogs </a>
+</br>
+<h1>{{ post.title }}</h1>
+<p>Author : {{ post.author }}</p>
+<p>Published on: {{ post.published_date }}</p>
+<p>{{ post.content }}</p>
+</br>
+{% if user == post.author %}
+<a href= "{% url 'delete_blog' post.pk %}">Delete Blog</a>
+{% endif %}
+{% endblock %}
