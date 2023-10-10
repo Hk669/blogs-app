@@ -17,12 +17,81 @@
     {% else %}
         <title>Django Blog</title>
     {% endif %}
+    
+    <style>
+
+      .navbar.bg-steel {
+        border-radius: 23px;
+        background: var(--dark-blue-gradient, linear-gradient(100deg, #000 7.38%, #455689 109.55%, #455689 109.55%));
+        box-shadow: 0px 8px 21px 0px rgba(0, 0, 0, 0.16);
+      }
+
+      /* Style the navbar brand (logo) */
+      .navbar.bg-steel .navbar-brand {
+        color: #fff !important; /* Use !important to override Bootstrap */
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      /* Style the navigation links */
+      .navbar.bg-steel .navbar-nav .nav-item .nav-link {
+        color: #fff !important;
+        font-family: Biotif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 28px; /* 140% */
+        letter-spacing: -0.3px;
+      }
+
+      /* Style the navigation links on hover */
+      .navbar.bg-steel .navbar-nav .nav-item .nav-link:hover {
+        text-decoration: none; 
+      }
+
+      /* Style the navigation toggle button icon */
+      .navbar.bg-steel .navbar-toggler-icon {
+        background-color: #fff !important; 
+      }
+
+      body {
+        background: #FFF7EF !important;
+      }
+
+      .author {
+        font-weight: bold !important;
+        color: #333;
+      }
+      
+      .published-date {
+        color: #888;
+      }
+      
+      .post-content {
+        margin-top: 20px;
+        font-size: 25px;
+        line-height: 1.5;
+      }
+      
+      /* Style the delete blog link */
+      .delete-blog-link {
+        color: #f00; /* Red color for the delete link */
+        text-decoration: none;
+        margin-top: 10px;
+        display: inline-block;
+        font-weight: bold;
+      }
+      
+      .delete-blog-link:hover {
+        text-decoration: underline; /* Underline on hover */
+      }
+    </style>
 </head>
 <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Blogs</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -36,6 +105,7 @@
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 <a class="nav-item nav-link" href="{% url 'create_blog' %}">Write</a>
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
               {% else %}
               <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
               <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
@@ -79,5 +149,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+  
+    <footer style="position:fixed;bottom:0;right: 20%">
+      <b>&copy; 2023 Hrushikesh Dokala</b>
+  </footer>
+  </body>
 </html>

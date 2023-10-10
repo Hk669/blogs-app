@@ -13,12 +13,16 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #e0d8e3;
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #f6f6f6;
   }
+  .site-header .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    font-weight: bold;
+}
   
   .site-header .navbar-nav .nav-link:hover {
     color: #ffffff;
@@ -82,3 +86,10 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+.navbar-nav .nav-item .nav-link {
+  text-decoration: none;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
