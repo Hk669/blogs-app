@@ -7,8 +7,8 @@ def home(request):
     posts = Posts.objects.all()
     return render(request, "blogs/home.html", {'posts': posts})
 
-def about(request):
-    return render(request, 'blogs/about.html')
+# def about(request):
+#     return render(request, 'blogs/about.html')
 
 @login_required
 def create_blog(request):
