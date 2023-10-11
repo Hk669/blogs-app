@@ -73,5 +73,5 @@ Start the development server:
 ## Contact
 
 Reach out :
-![LinkedIn](https://www.linkedin.com/hrushikeshdokala)
-![X](https://www.x.com/hrushikeshhhh)
+[LinkedIn](https://www.linkedin.com/hrushikeshdokala)
+[X](https://www.x.com/hrushikeshhhh)
