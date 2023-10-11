@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UserRegisterationForm, LoginForm
+from .forms import UserRegisterationForm, LoginForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -38,3 +38,10 @@ def user_logout(request):
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
+
+@login_required
+def profile_update(request):
+    u_form = UserUpdateForm()
+    p_form = ProfileUpdateForm()
+
+    return render(request, 'users/profile.html', {'u_form': u_form, 'p_form': p_form})
