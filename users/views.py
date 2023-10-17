@@ -45,3 +45,4 @@ def profile_update(request):
     p_form = ProfileUpdateForm()
 
     return render(request, 'users/profile.html', {'u_form': u_form, 'p_form': p_form})
+
